@@ -23,20 +23,11 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-lg" : "bg-transparent"}`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        
-          href="#hero"
-          className="font-display font-bold text-xl tracking-tight gradient-text"
-        >
-          PM.
-        </a>
+        <a href="#hero" className="font-display font-bold text-xl tracking-tight gradient-text">PM.</a>
 
-        {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={label}>
@@ -51,15 +42,10 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        
-          href="#contact"
-          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-accent-blue text-accent-blue text-sm font-medium hover:bg-accent-blue hover:text-white transition-all duration-200"
-        >
+        <a href="#contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-accent-blue text-accent-blue text-sm font-medium hover:bg-accent-blue hover:text-white transition-all duration-200">
           Hire Me
         </a>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
           className="md:hidden text-text-muted hover:text-text-primary transition-colors"
@@ -69,7 +55,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
